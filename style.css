@@ -1,3 +1,13 @@
+:root {
+    --background-color: black;
+    --white: white;
+    --main-color: rgba(255, 0, 0, 0.55);
+    --secondary-color: rgba(255, 0, 0, 0.25);
+    --third-color: rgba(255, 0, 0, 0.2);
+    --fourth-color: rgba(0, 0, 0, 0);
+    --grid-color: rgba(25, 25, 25, 0.137);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +16,17 @@
 }
 
 body {
-    background-color: black;
+    background-color: var(--background-color);
     height: 150vh;
 }
 
 .gradient-circle {
     position: absolute;
     background: radial-gradient(circle, 
-        rgba(255, 0, 0, 0.55) 0%, 
-        rgba(255, 0, 0, 0.25) 24%, 
-        rgba(255, 0, 0, 0.2) 30%, 
-        rgba(0, 0, 0, 0) 100%);
+        var(--main-color) 0%, 
+        var(--secondary-color) 24%, 
+        var(--third-color) 30%, 
+        var(--fourth-color) 100%);
     height: 500px;
     width: 500px;
     z-index: -1;
@@ -85,7 +95,7 @@ body {
     display: block;
     width: 8.8%;
     height: 4px;
-    background-color: rgba(255, 0, 0, 0.25);
+    background-color: var(--secondary-color);
     margin-left: auto;
     margin-right: auto;
     margin-top: 0.5rem;
@@ -95,12 +105,12 @@ body {
 .grid-container-about {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    color: white;
+    color: var(--white);
     place-items: center;
 }
 
 .grid-item {
-    background-color: rgba(25, 25, 25, 0.137);
+    background-color: var(--grid-color);
     margin-top: 3rem;
     padding: 1rem 3rem;
     width: 100%; /* Changed from fixed 400px to responsive */
@@ -108,7 +118,7 @@ body {
     min-width: 250px; /* Ensures it doesn't shrink too much */
     height: 180px;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -137,8 +147,7 @@ body {
 }
 
 .grid-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);;
 }
 
 .skills {
